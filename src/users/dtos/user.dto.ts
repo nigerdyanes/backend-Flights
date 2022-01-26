@@ -1,7 +1,7 @@
 import { OmitType, PartialType } from '@nestjs/swagger';
 import { IsEmail, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
-export class UserDTO {
+export class CreateUserDTO {
   @IsNotEmpty()
   @IsString()
   readonly name: string;
@@ -17,7 +17,7 @@ export class UserDTO {
   readonly password: string;
 }
 
-export class UserPartials extends PartialType(UserDTO) {}
+export class UserPartials extends PartialType(CreateUserDTO) {}
 
 export class UpdateUserDTO extends OmitType(UserPartials, [
   'password',
