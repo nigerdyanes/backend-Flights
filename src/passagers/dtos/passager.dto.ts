@@ -1,5 +1,5 @@
 import { PartialType } from '@nestjs/swagger';
-import { IsEmail, IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
 
 export class CreatePassagerDTO {
   @IsString()
@@ -11,10 +11,4 @@ export class CreatePassagerDTO {
   readonly email: string;
 }
 
-export class UpdatePassagerDTO extends PartialType(CreatePassagerDTO) {
-  @IsOptional()
-  readonly name: string;
-
-  @IsOptional()
-  readonly email: string;
-}
+export class UpdatePassagerDTO extends PartialType(CreatePassagerDTO) {}
