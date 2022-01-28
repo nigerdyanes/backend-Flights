@@ -9,7 +9,9 @@ import {
 } from '@nestjs/common';
 import { PassagersService } from './passagers.service';
 import { CreatePassagerDTO, UpdatePassagerDTO } from './dtos/passager.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('passagers')
 @Controller('passagers')
 export class PassagersController {
   constructor(private readonly passagersService: PassagersService) {}

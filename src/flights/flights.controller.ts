@@ -12,7 +12,8 @@ import {
 import { FlightsService } from './flights.service';
 import { CreateFlightDTO, UpdateFlightDTO } from './dtos/flights.dto';
 import { PassagersService } from '../passagers/passagers.service';
-
+import { ApiTags } from '@nestjs/swagger';
+@ApiTags('flights')
 @Controller('flights')
 export class FlightsController {
   constructor(
