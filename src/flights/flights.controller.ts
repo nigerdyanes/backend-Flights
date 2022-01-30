@@ -8,11 +8,15 @@ import {
   Param,
   Patch,
   Post,
+  UseGuards,
 } from '@nestjs/common';
 import { FlightsService } from './flights.service';
 import { CreateFlightDTO, UpdateFlightDTO } from './dtos/flights.dto';
 import { PassagersService } from '../passagers/passagers.service';
 import { ApiTags } from '@nestjs/swagger';
+import { JwtAuthGuard } from 'src/auth/guards/jwt.auth.guard';
+
+@UseGuards(JwtAuthGuard)
 @ApiTags('flights')
 @Controller('flights')
 export class FlightsController {

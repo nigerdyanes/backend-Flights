@@ -6,11 +6,13 @@ import {
   Param,
   Patch,
   Post,
+  UseGuards,
 } from '@nestjs/common';
 import { PassagersService } from './passagers.service';
 import { CreatePassagerDTO, UpdatePassagerDTO } from './dtos/passager.dto';
 import { ApiTags } from '@nestjs/swagger';
-
+import { JwtAuthGuard } from 'src/auth/guards/jwt.auth.guard';
+@UseGuards(JwtAuthGuard)
 @ApiTags('passagers')
 @Controller('passagers')
 export class PassagersController {
